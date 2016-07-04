@@ -1,0 +1,133 @@
+.map-wrapper {
+    height: 30%;
+    padding-top: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 50%;
+    width: 345px;
+    margin-left: -172.5px;
+    bottom: 10px;
+    position: absolute;
+}
+.fil0{
+    fill: rgba(0,0,0,.5);
+    transition: fill 500ms;
+    cursor: pointer;
+}
+
+.fil0:hover,
+.fil0.active {
+    fill: rgba(215,181,109,.6);
+}
+
+.choose-branch {
+    display: block;
+    padding-top: 80px;
+}
+
+.choose-branch .hide-switcher {
+    visibility: hidden;
+    height: 0;
+}
+
+.welcome-header img {
+    height: 60px;
+}
+
+.welcome-header h4 {
+    color: #fff;    
+}
+
+.welcome-header h4 span {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.section {
+    padding: 40px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.welcome-container {
+    height: 100%;
+}
+
+.welcome {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.welcome .uk-slideset li {
+    text-align: right;
+}
+
+.welcome .uk-slideset li:nth-child(2n) {
+    text-align: left;
+}
+
+.welcome .uk-slideset li article {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome .uk-slideset li article img {
+    border: 5px solid #fff;
+    -webkit-box-shadow: inset 0 0 5px #000;
+    -moz-box-shadow: inset 0 0 5px #000;
+    box-shadow: inset 0 0 5px #000;
+    height: 180px;
+}
+
+.welcome .uk-slideset li article a {
+    position: relative;
+    display: inline-block;
+    height: 180px;
+    margin: 0 40px;
+}
+
+.welcome .uk-slideset li article a:before {
+    content:  url('../img/article-top.png');
+    position: absolute;
+    display: block;
+    top: -18px;
+    left: -17px;
+    width: 146px;
+    height: 146px;
+}
+
+.welcome .uk-slideset li article a:after {
+    content: url('../img/article-bottom.png');
+    position: absolute;
+    display: block;
+    bottom: -18px;
+    right: -17px;
+    width: 146px;
+    height: 146px;
+}
+
+.welcome .uk-slideset li article p {
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    top: 35px;
+    left: -75px;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.welcome .uk-slideset li:nth-child(2n) article p {
+    right: -75px;
+    left: auto;
+}

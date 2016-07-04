@@ -1,0 +1,3 @@
+UPDATE pp_gallery_data set name='slider-item',alt='slider-item',description='<div class=\"uk-overlay-panel uk-flex uk-flex-center uk-flex-middle\">					<div class=\"slider-content\">		<p>МАГАЗИН ЖЕНСКОЙ ОДЕЖДЫ, ОБУВИ И СУМОК</p>				<div class=\"sub-caption-slider\">		<span>C AISSHOP.ALMATY</span><br>				вы будете конфеткой						<figure></figure>		</div>
+ </div>
+  </div>' WHERE id = '34'
