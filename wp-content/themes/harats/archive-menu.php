@@ -9,10 +9,16 @@
 
 get_header();
 $currentObj = get_queried_object();
-
-$menuItemsCat = get_categories(array(
+/*$menuItemsCat = get_categories(array(
     'parent' => $currentObj->term_id
-));
+));*/
+$menuItemsCat=array();
+$ParrentObj=get_category($currentObj->category_parent);
+$menuItemsCats=wp_get_nav_menu_items($ParrentObj->slug.'-menu');
+echo '<br>';
+foreach ($menuItemsCats as $val ){
+    $menuItemsCat[]=get_term($val->object_id);
+}
 ?>
     <div class="uk-container uk-container-center">
         <div class="section">
