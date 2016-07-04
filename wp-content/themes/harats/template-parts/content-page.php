@@ -120,9 +120,15 @@ $todayHarats = get_posts(array(
 				'parent' => $currentCats['menu']['term_id'],
 				'number' => 5
 			));
+		$menuItemsCat=array();
+		$menuItemsCats=wp_get_nav_menu_items($currentCat->slug.'-menu');
+		echo '<br>';
+		foreach ($menuItemsCats as $val ){
+			$menuItemsCat[]=get_term($val->object_id);
+		}
 		?>
 		<div data-uk-grid class="uk-grid-width-small-1-1 uk-grid width-medium-1-2 uk-grid-width-large-1-3">
-			<?php foreach($menuCats as $menuCat) :?>
+			<?php foreach($menuItemsCat as $menuCat) :?>
 				<?php
 					$menuItems = get_posts(array(
 						'posts_per_page'   => 4,
