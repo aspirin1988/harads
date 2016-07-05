@@ -15,7 +15,7 @@
 	<meta charset="UTF-8">
 	<title>Title goes here...</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<?php  //wp_head()?>
 	<!-- Stylesheets-->
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/public/bower_components/uikit/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/public/bower_components/uikit/css/components/slider.min.css">
@@ -86,13 +86,15 @@ foreach($tempArray as $value) {
 <nav <?=$sticky_nav = ($post->post_type == 'page') ? 'data-uk-sticky' : ''; ?> class="main-navigation uk-navbar">
 	<div class="uk-container uk-container-center">
 		<a href="/<?=$currentCat->slug; ?>" class="uk-visible-large uk-navbar-brand"><img src="<?php bloginfo('template_url'); ?>/public/img/logo.png" alt=""></a>
+		<a style="float: right;top: -12px;position: relative;margin-left: 5px;" class="" href="/"><img src="<?php bloginfo('template_directory') ?>/public/img/harats_2.png" alt=""></a>
+
 		<ul class="uk-navbar-nav uk-visible-large" data-uk-scrollspy-nav="{closest: 'li', smoothscroll: {offset: 100}}">
-			<li><a class="move-to-nav" href="#to-top">О нас</a></li>
-			<li><a class="move-to-nav" href="#to-today-harats">Сегодня в Harats</a></li>
-			<li><a class="move-to-nav" href="#to-beer">Пиво</a></li>
-			<li><a class="move-to-nav" href="#to-menu">Меню</a></li>
-			<li><a class="move-to-nav" href="#to-gallery">Фото</a></li>
-			<li><a class="move-to-nav" href="#to-contacts">Контакты</a></li>
+			<li><a class="move-to-nav" href="#to-top"><?=get_field('about')?></a></li>
+			<li><a class="move-to-nav" href="#to-today-harats"><?=get_field('harats_to_day')?></a></li>
+			<li><a class="move-to-nav" href="#to-beer"><?=get_field('beer')?></a></li>
+			<li><a class="move-to-nav" href="#to-menu"><?=get_field('menu')?></a></li>
+			<li><a class="move-to-nav" href="#to-gallery"><?=get_field('gallery')?></a></li>
+			<li><a class="move-to-nav" href="#to-contacts"><?=get_field('contacts')?></a></li>
 		</ul>
 		<a id="menu-nav" href="#mobile-nav" data-uk-offcanvas="" class="uk-navbar-toggle uk-hidden-large"></a>
 		<a href="/<?=$currentCat->slug; ?>" class="has-logo uk-navbar-brand uk-navbar-center uk-hidden-large uk-text-center"><img src="<?php bloginfo('template_url'); ?>/public/img/logo.png" alt=""></a>
