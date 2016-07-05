@@ -50,7 +50,7 @@ $todayHarats = get_posts(array(
 <?php if(!empty($todayHarats)) : ?>
 <section style="background-image: url('<?php bloginfo('template_url'); ?>/public/img/today-harats-bg.png')" class="today-harats section" id="to-today-harats">
 	<div class="uk-container uk-container-center">
-		<h2 class="section-title"><a href="<?=get_permalink($currentCats['haratsnews']['term_id']); ?>">сегодня в harat’s</a></h2>
+		<h2 class="section-title"><a href="<?=get_term_link($currentCats['haratsnews']['term_id']); ?>">сегодня в harat’s</a></h2>
 		<div data-uk-slideset="{small: 1, medium: 2, large: 3}">
 			<div class="uk-slidenav-position">
 				<ul class="uk-grid uk-slideset">
