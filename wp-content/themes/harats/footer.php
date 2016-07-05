@@ -122,5 +122,6 @@ $currentCatID = $currentCat->term_id;
 		})();
 	});
 </script>
+<?php wp_footer(); ?>
 </body>
 </html>

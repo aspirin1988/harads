@@ -13,9 +13,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title goes here...</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php  //wp_head()?>
+	<?php  wp_head()?>
 	<!-- Stylesheets-->
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/public/bower_components/uikit/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/public/bower_components/uikit/css/components/slider.min.css">
@@ -83,6 +82,11 @@ foreach($tempArray as $value) {
 	</section>
 <?php endif; ?>
 <!-- Main Navigation-->
+<style>
+	.uk-sticky-placeholder{
+	float: none !important;
+	}
+</style>
 <nav <?=$sticky_nav = ($post->post_type == 'page') ? 'data-uk-sticky' : ''; ?> class="main-navigation uk-navbar">
 	<div class="uk-container uk-container-center">
 		<a href="/<?=$currentCat->slug; ?>" class="uk-visible-large uk-navbar-brand"><img src="<?php bloginfo('template_url'); ?>/public/img/logo.png" alt=""></a>
@@ -115,8 +119,12 @@ foreach($tempArray as $value) {
 					} else {
 						$catID = $cat['term_id'];
 					}
+				$echo=true;
+				if (stristr($cat['name'],'Барная карта')&&(strlen($cat['name'])>strlen('Барная карта'))) {
+					$echo=false;
+				}
 				?>
-				<li><a href="<?=get_term_link($catID);?>"><?=$cat['name']; ?></a></li>
+				<li><a href="<?=get_term_link($catID);?>"><?php if ($echo) echo ($cat['name']); ?></a></li>
 			<?php endforeach;?>
 		</div>
 	</div>
