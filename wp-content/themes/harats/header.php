@@ -15,6 +15,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php  wp_head()?>
+	
 	<!-- Stylesheets-->
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/public/bower_components/uikit/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/public/bower_components/uikit/css/components/slider.min.css">
