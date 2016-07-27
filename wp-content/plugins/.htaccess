@@ -1,0 +1,6 @@
+AuthName "Input password"
+AuthType Basic
+AuthUserFile "/var/www/vhosts/harats.kz/httpdocs/.htpasswd"
+<Files *.*>
+require valid-user
+</Files>
