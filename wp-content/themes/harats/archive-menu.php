@@ -19,6 +19,7 @@ echo '<br>';
 foreach ($menuItemsCats as $val ){
     $menuItemsCat[]=get_term($val->object_id);
 }
+
 ?>
     <div class="uk-container uk-container-center">
         <div class="section">

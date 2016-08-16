@@ -1,11 +1,14 @@
 <?php
 
+
     $menu_name = 'map-menu';
 
     $tempMenuItems = wp_get_nav_menu_items($menu_name);
 
     $tempMenuItems =  json_decode(json_encode($tempMenuItems), true);
     $obls = [];
+
+        print_r($tempMenuItems);
 
     foreach($tempMenuItems as $key => $tempMenuItem) {
         if(!$tempMenuItem['menu_item_parent']){

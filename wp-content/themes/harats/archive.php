@@ -12,6 +12,7 @@ $currentObj = get_queried_object();
 $currentObjPosts = get_posts(array(
 	'category' => $currentObj->term_id
 ));
+
 ?>
 
 	<div class="uk-container uk-container-center">

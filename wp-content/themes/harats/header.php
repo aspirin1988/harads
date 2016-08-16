@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme.
  *
@@ -29,6 +30,15 @@
 <?php
 $mainUrls = explode('/', $_SERVER['REQUEST_URI']);
 $countOfUrl = count($mainUrls);
+
+global $obj;
+	if (is_page()){
+		$obj=get_queried_object();
+	}
+	else{
+		$obj=get_page_by_path($mainUrls[2]);;
+	}
+
 
 if(!strpos($_SERVER['REQUEST_URI'], 'en')) {
 	if($countOfUrl == 3) {
@@ -85,27 +95,50 @@ foreach($tempArray as $value) {
 <!-- Main Navigation-->
 <style>
 	.uk-sticky-placeholder{
-	float: none !important;
+		float: none !important;
+		position:relative !important;
+	}
+	.skiptranslate iframe{
+		display:none;
+	}
+	.goog-te-gadget-simple>img{
+		display:none;
+	}
+	.goog-te-gadget-simple{
+		border-radius: 15px;
+		padding: 3px;
+	}
+	#google_translate_element{
+		position: absolute;
+		z-index: 99999999;
+		right: 1%;
+		bottom: 7%;
 	}
 </style>
-<nav <?=$sticky_nav = ($post->post_type == 'page') ? 'data-uk-sticky' : ''; ?> class="main-navigation uk-navbar">
+
+<nav <?=$sticky_nav = ($post->post_type == 'page') ? 'data-uk-sticky' : ''; ?> class="main-navigation  uk-navbar">
 	<div class="uk-container uk-container-center">
+
+		<div id="google_translate_element"></div><script type="text/javascript">
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+			}
+		</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 		<a href="/<?=$currentCat->slug; ?>" class="uk-visible-large uk-navbar-brand"><img src="<?php bloginfo('template_url'); ?>/public/img/logo.png" alt=""></a>
 		<a style="float: right;top: -12px;position: relative;margin-left: 5px;" class="" href="/"><img src="<?php bloginfo('template_directory') ?>/public/img/harats_2.png" alt=""></a>
-
 		<ul class="uk-navbar-nav uk-visible-large" data-uk-scrollspy-nav="{closest: 'li', smoothscroll: {offset: 100}}">
-			<li><a class="move-to-nav" href="#to-top"><?=get_field('about')?></a></li>
-			<li><a class="move-to-nav" href="#to-today-harats"><?=get_field('harats_to_day')?></a></li>
-			<li><a class="move-to-nav" href="#to-beer"><?=get_field('beer')?></a></li>
-			<li><a class="move-to-nav" href="#to-menu"><?=get_field('menu')?></a></li>
-			<li><a class="move-to-nav" href="#to-gallery"><?=get_field('gallery')?></a></li>
-			<li><a class="move-to-nav" href="#to-contacts"><?=get_field('contacts')?></a></li>
+			<li><a class="move-to-nav" href="#to-top"><?=get_field('about',$obj->ID)?></a></li>
+			<li><a class="move-to-nav" href="#to-today-harats"><?=get_field('harats_to_day',$obj->ID)?></a></li>
+			<li><a class="move-to-nav" href="#to-beer"><?=get_field('beer',$obj->ID)?></a></li>
+			<li><a class="move-to-nav" href="#to-menu"><?=get_field('menu',$obj->ID)?></a></li>
+			<li><a class="move-to-nav" href="#to-gallery"><?=get_field('gallery',$obj->ID)?></a></li>
+			<li><a class="move-to-nav" href="#to-contacts"><?=get_field('contacts',$obj->ID)?></a></li>
 		</ul>
 		<a id="menu-nav" href="#mobile-nav" data-uk-offcanvas="" class="uk-navbar-toggle uk-hidden-large"></a>
 		<a href="/<?=$currentCat->slug; ?>" class="has-logo uk-navbar-brand uk-navbar-center uk-hidden-large uk-text-center"><img src="<?php bloginfo('template_url'); ?>/public/img/logo.png" alt=""></a>
 	</div>
 </nav>
-<!-- Main Navigation end-->
 
 <!-- Mobile Navigation-->
 <div id="mobile-nav" class="uk-offcanvas">
