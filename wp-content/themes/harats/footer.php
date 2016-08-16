@@ -112,7 +112,20 @@ $currentCatID = $currentCat->term_id;
 
 <script>
 	$(document).ready(function() {
-		;(function(){
+		(function(){
+			setTimeout(function () {
+				var hash = location.hash;
+				if (hash) {
+					console.log(hash);
+					$(hash).trigger("click");
+					return false;
+				}
+			},200);
+			return false;
+		})();
+
+
+		(function(){
 			var langBtn = $("#weglot_switcher .wgcurrent a"),
 				langsUl = $('#weglot_switcher ul');
 

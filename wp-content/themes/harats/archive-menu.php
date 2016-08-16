@@ -42,7 +42,7 @@ foreach ($menuItemsCats as $val ){
                 <div class="uk-width-small-1-1 uk-width-medium-1-3">
                     <ul data-uk-switcher="{connect:'#menu-items-tab', animation: 'slide-right'}" class="menu-items-link">
                         <?php foreach($menuItemsCat as $menuItem) :?>
-                            <li><a href=""><?=$menuItem->name; ?></a></li>
+                            <li><a id="<?=$menuItem->slug?>"><?=$menuItem->name; ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

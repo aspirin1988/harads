@@ -137,7 +137,7 @@ $todayHarats = get_posts(array(
 				?>
 				<div>
 					<ul class="uk-list">
-						<li class="list-title"><?=$menuCat->name; ?></li>
+						<a href="<?=get_term_link($currentCats['menu']['term_id'])?>/#<?=$menuCat->slug?>"><li class="list-title"><?=$menuCat->name; ?></li></a>
 						<?php foreach($menuItems as $menuItem): ?>
 							<li>
 								<div class="has-flex">
