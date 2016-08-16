@@ -111,13 +111,13 @@ foreach($tempArray as $value) {
 	#google_translate_element{
 		position: absolute;
 		z-index: 99999999;
-		right: 1%;
-		bottom: 7%;
+		right: -2%;
+		bottom: -5%;
 	}
 </style>
 
 <nav <?=$sticky_nav = ($post->post_type == 'page') ? 'data-uk-sticky' : ''; ?> class="main-navigation  uk-navbar">
-	<div class="uk-container uk-container-center">
+	<div class="uk-container uk-container-center uk-position-relative">
 
 		<div id="google_translate_element"></div><script type="text/javascript">
 			function googleTranslateElementInit() {

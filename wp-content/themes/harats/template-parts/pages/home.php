@@ -8,7 +8,6 @@
     $tempMenuItems =  json_decode(json_encode($tempMenuItems), true);
     $obls = [];
 
-        print_r($tempMenuItems);
 
     foreach($tempMenuItems as $key => $tempMenuItem) {
         if(!$tempMenuItem['menu_item_parent']){
